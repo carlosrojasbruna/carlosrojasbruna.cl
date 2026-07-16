@@ -138,8 +138,21 @@
     .cv-band h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; }
     .cv-band p { font-size: 0.86rem; color: var(--muted); }
 
+    /* ── CONTACT BAND ── */
+    .contact-band { background: var(--navy); margin-top: 4.5rem; padding: 4.2rem 0; }
+    .contact-band .sec-title { color: #ffffff; }
+    .contact-band p { color: #c9d6ea; font-size: 0.95rem; margin-bottom: 1.5rem; max-width: 34rem; }
+    .contact-band-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 2.8rem; align-items: start; }
+    .btn-light { color: #ffffff; border-color: rgba(255,255,255,0.55); background: transparent; }
+    .btn-light:hover { background: rgba(255,255,255,0.12); border-color: #fff; }
+    .contact-card { background: #ffffff; border-radius: var(--r); padding: 1.6rem; box-shadow: 0 12px 32px rgba(0,0,0,0.22); }
+    .contact-band .contact-grid { margin-top: 1.6rem; }
+    .contact-band .contact-item { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.22); color: #eaf0f8; }
+    .contact-band .contact-item span { color: #c9d6ea; }
+    .contact-band .contact-item:hover { border-color: #ffffff; }
+
     /* ── CONTACT FORM ── */
-    .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; max-width: 40rem; margin: 1.4rem 0 1.6rem; }
+    .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin: 0; }
     .contact-form input, .contact-form textarea {
       font-family: 'Source Sans 3', sans-serif; font-size: 0.9rem; color: var(--text);
       background: var(--bg-card); border: 1px solid var(--border); border-radius: 7px;
@@ -159,13 +172,14 @@
     .contact-item:hover { border-color: var(--navy); }
     .contact-item span { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: var(--muted); }
 
-    footer { border-top: 1px solid var(--border); margin-top: 4rem; padding: 1.6rem 0 2.2rem; font-size: 0.76rem; color: var(--muted); }
+    footer { background: #142e56; margin-top: 0; padding: 1.5rem 0 2rem; font-size: 0.76rem; color: rgba(255,255,255,0.55); }
 
     @media (max-width: 760px) {
       .hero-grid { grid-template-columns: 1fr; }
       .avatar { display: none; }
       .about-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
+      .contact-band-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -276,9 +290,7 @@
       <ul>
         <li data-i18n="cr1">PhD en Matemáticas, Universidad de Chile</li>
         <li data-i18n="cr2">Profesor y Director de Gestión Docente, Facultad de Matemáticas UC</li>
-        <li data-i18n="cr3">Miembro de la Mesa IA UC (política institucional de IA)</li>
         <li data-i18n="cr4">Google Data Analytics Professional Certificate</li>
-        <li data-i18n="cr5">Estadías de investigación: U. de Nottingham, University College Dublin, U. de Kassel</li>
       </ul>
     </div>
   </div>
@@ -331,21 +343,28 @@
   </div>
 </section>
 
-<section class="wrap" id="contacto">
-  <h2 class="sec-title" data-i18n="ct_title">Conversemos</h2>
-  <p data-i18n="ct_p" style="max-width:38rem">¿Tu institución está pensando cómo abordar la IA? ¿Tu equipo docente o de gestión necesita herramientas concretas? Escríbeme por el formulario o agenda directamente una asesoría.</p>
-  <form class="contact-form" action="https://formspree.io/f/mjgnygvz" method="POST">
-    <input type="hidden" name="_subject" value="Contacto desde carlosrojasbruna.cl">
-    <input type="text" name="nombre" data-i18n-ph="f_name" placeholder="Tu nombre" required>
-    <input type="email" name="email" data-i18n-ph="f_email" placeholder="Tu correo" required>
-    <input type="text" name="institucion" data-i18n-ph="f_inst" placeholder="Institución (opcional)">
-    <textarea name="mensaje" rows="4" data-i18n-ph="f_msg" placeholder="¿En qué te puedo ayudar? (asesoría, charla, taller...)" required></textarea>
-    <button type="submit" class="btn btn-primary" data-i18n="f_send">Enviar mensaje</button>
-  </form>
-  <div class="contact-grid">
-    <a class="contact-item" href="https://www.linkedin.com/in/carlosrojasbruna" target="_blank" rel="noopener">💼 <span>linkedin/carlosrojasbruna</span></a>
-    <a class="contact-item" href="https://github.com/carlosrojasbruna" target="_blank" rel="noopener">💻 <span>github/carlosrojasbruna</span></a>
-    <a class="contact-item" href="https://orcid.org/0000-0003-0845-9986" target="_blank" rel="noopener">🔬 <span>ORCID 0000-0003-0845-9986</span></a>
+<section class="contact-band" id="contacto">
+  <div class="wrap contact-band-grid">
+    <div class="contact-intro">
+      <h2 class="sec-title" data-i18n="ct_title">Conversemos</h2>
+      <p data-i18n="ct_p">¿Tu institución está pensando cómo abordar la IA? ¿Tu equipo docente o de gestión necesita herramientas concretas? Escríbeme por el formulario o agenda directamente una asesoría.</p>
+      <a class="btn btn-light" href="https://cal.com/carlosrojasbruna" target="_blank" rel="noopener" data-i18n="ct_cal">Agendar una asesoría →</a>
+      <div class="contact-grid">
+        <a class="contact-item" href="https://www.linkedin.com/in/carlosrojasbruna" target="_blank" rel="noopener">💼 <span>linkedin/carlosrojasbruna</span></a>
+        <a class="contact-item" href="https://github.com/carlosrojasbruna" target="_blank" rel="noopener">💻 <span>github/carlosrojasbruna</span></a>
+        <a class="contact-item" href="https://orcid.org/0000-0003-0845-9986" target="_blank" rel="noopener">🔬 <span>ORCID 0000-0003-0845-9986</span></a>
+      </div>
+    </div>
+    <div class="contact-card">
+      <form class="contact-form" action="https://formspree.io/f/mjgnygvz" method="POST">
+        <input type="hidden" name="_subject" value="Contacto desde carlosrojasbruna.cl">
+        <input type="text" name="nombre" data-i18n-ph="f_name" placeholder="Tu nombre" required>
+        <input type="email" name="email" data-i18n-ph="f_email" placeholder="Tu correo" required>
+        <input type="text" name="institucion" data-i18n-ph="f_inst" placeholder="Institución (opcional)">
+        <textarea name="mensaje" rows="5" data-i18n-ph="f_msg" placeholder="¿En qué te puedo ayudar? (asesoría, charla, taller...)" required></textarea>
+        <button type="submit" class="btn btn-primary" data-i18n="f_send">Enviar mensaje</button>
+      </form>
+    </div>
   </div>
 </section>
 
@@ -381,9 +400,7 @@ const I18N = {
     cred_title: "Credentials",
     cr1: "PhD in Mathematics, Universidad de Chile",
     cr2: "Professor & Director of Teaching Management, Faculty of Mathematics UC",
-    cr3: "Member, UC AI Board (institutional AI policy)",
     cr4: "Google Data Analytics Professional Certificate",
-    cr5: "Research fellowships: U. of Nottingham, University College Dublin, U. of Kassel",
     pf_label: "Portfolio", pf_title: "Featured projects",
     p1l: "AI · Automated grading", p1t: "AI-assisted grading of handwritten mathematics exams", p1d: "A 7-phase pipeline where the LLM proposes, SymPy verifies and the human decides. Piloted on the Linear Algebra final exam (UC).",
     p2l: "Curriculum analysis", p2t: "Do university math courses deliver what they promise?", p2d: "Gap analysis of 74 courses and 469 learning outcomes, coded against Bloom's taxonomy and the modelling cycle.",
@@ -392,7 +409,7 @@ const I18N = {
     p5l: "Teaching management · Defence sector", p5t: "SIIDD: an integrated system for research, innovation and teaching development", p5d: "Design of an institutional teaching-improvement system with the Naval War Academy of the Chilean Navy (UC Education Challenges Programme).",
     p6l: "Holistic education", p6t: "Mathematical thinking and faith education at school", p6d: "Funded research on integrating mathematical proof and holistic formation, published in a religious education journal.",
     cvb_t: "Full academic CV", cvb_d: "Publications, research projects, conferences, international collaborations, teaching and more.", cvb_btn: "View academic CV →",
-    ct_title: "Let's talk", ct_p: "Is your institution figuring out how to approach AI? Does your teaching or management team need concrete tools? Write to me using the form, or book a consulting session directly.",
+    ct_title: "Let's talk", ct_cal: "Book a consulting session →", ct_p: "Is your institution figuring out how to approach AI? Does your teaching or management team need concrete tools? Write to me using the form, or book a consulting session directly.",
     f_send: "Send message",
     _ph: { f_name: "Your name", f_email: "Your email", f_inst: "Institution (optional)", f_msg: "How can I help you? (consulting, talk, workshop...)" }
   },
