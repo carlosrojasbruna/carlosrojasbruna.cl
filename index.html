@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carlos Rojas Bruna · Asesorías, charlas y capacitaciones en IA y educación</title>
-  <meta name="description" content="PhD en Matemáticas · Profesor UC. Asesorías, charlas y capacitaciones en inteligencia artificial en educación, innovación docente y análisis curricular.">
+  <meta name="description" content="PhD en Matemáticas. Asesorías, charlas y capacitaciones en inteligencia artificial en educación, innovación docente, gestión docente y análisis curricular.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -137,6 +137,17 @@
     .cv-band h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; }
     .cv-band p { font-size: 0.86rem; color: var(--muted); }
 
+    /* ── CONTACT FORM ── */
+    .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; max-width: 40rem; margin: 1.4rem 0 1.6rem; }
+    .contact-form input, .contact-form textarea {
+      font-family: 'Source Sans 3', sans-serif; font-size: 0.9rem; color: var(--text);
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 7px;
+      padding: 0.6rem 0.85rem; width: 100%;
+    }
+    .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--navy); }
+    .contact-form textarea, .contact-form input[name="institucion"] { grid-column: 1 / -1; }
+    .contact-form button { grid-column: 1 / -1; justify-self: start; cursor: pointer; font-family: 'Source Sans 3', sans-serif; }
+
     /* ── CONTACT ── */
     .contact-grid { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.5rem; }
     .contact-item {
@@ -177,7 +188,7 @@
   <div class="hero-grid">
     <div>
       <h1 class="hero-name">Carlos Rojas Bruna</h1>
-      <div class="hero-role">PhD in Mathematics · <b data-i18n="role2">Profesor, Pontificia Universidad Católica de Chile</b></div>
+      <div class="hero-role">PhD in Mathematics · <b data-i18n="role2">Asesorías, charlas y capacitaciones en IA y educación</b></div>
       <p class="hero-tag" data-i18n="tagline">Ayudo a instituciones educativas y equipos docentes a <strong>integrar inteligencia artificial e innovación pedagógica basada en evidencia</strong> — desde la política institucional hasta la sala de clases.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="#servicios" data-i18n="cta1">Ver servicios</a>
@@ -206,7 +217,7 @@
       <div class="tier"><div class="tier-name"><span data-i18n="s1t1">Sesión única</span><span class="tier-note" data-i18n="s1t1n">1 hora, tema a elección</span></div><div class="tier-price">USD 100</div></div>
       <div class="tier"><div class="tier-name"><span data-i18n="s1t2">Pack 3 sesiones</span><span class="tier-note" data-i18n="s1t2n">Con seguimiento entre sesiones</span></div><div class="tier-price">USD 260</div></div>
       <div class="tier"><div class="tier-name"><span data-i18n="s1t3">Acompañamiento mensual</span><span class="tier-note" data-i18n="s1t3n">4 sesiones + soporte asíncrono</span></div><div class="tier-price" data-i18n="s1t3p">USD 430<span style="color:var(--muted)">/mes</span></div></div>
-      <a class="btn btn-primary svc-cta" href="mailto:car.rojasb@outlook.com?subject=Asesor%C3%ADa%201%3A1" data-i18n="s_book">Reservar</a>
+      <a class="btn btn-primary svc-cta" href="https://cal.com/carlosrojasbruna" target="_blank" rel="noopener" data-i18n="s_book">Reservar una hora</a>
     </div>
 
     <div class="svc-card">
@@ -222,7 +233,7 @@
     <div class="svc-card">
       <div class="svc-icon">🏛️</div>
       <div class="svc-name" data-i18n="s3_name">Talleres y capacitaciones</div>
-      <p class="svc-desc" data-i18n="s3_desc">Programas prácticos para equipos docentes e instituciones: corrección asistida por IA, portafolios y escritura reflexiva, rediseño curricular por competencias, analítica de datos educativos.</p>
+      <p class="svc-desc" data-i18n="s3_desc">Programas prácticos para equipos docentes, <strong>equipos de gestión de la docencia</strong> e instituciones: adopción y gobernanza de IA co-construida desde la práctica, corrección asistida por IA, portafolios y escritura reflexiva, rediseño curricular por competencias, analítica de datos educativos.</p>
       <div class="tier"><div class="tier-name"><span data-i18n="s3t1">Taller medio día</span><span class="tier-note" data-i18n="s3t1n">Hasta 25 personas</span></div><div class="tier-price">USD 700</div></div>
       <div class="tier"><div class="tier-name"><span data-i18n="s3t2">Taller día completo</span><span class="tier-note" data-i18n="s3t2n">Hasta 25 personas</span></div><div class="tier-price">USD 1.200</div></div>
       <div class="tier"><div class="tier-name"><span data-i18n="s3t3">Programa institucional</span><span class="tier-note" data-i18n="s3t3n">4+ sesiones, diseño a medida</span></div><div class="tier-price" data-i18n="s3t3p">desde USD 2.200</div></div>
@@ -246,6 +257,7 @@
     <span class="topic" data-i18n="t8">Formación de profesores de matemáticas</span>
     <span class="topic" data-i18n="t9">Enseñanza universitaria de la matemática</span>
     <span class="topic" data-i18n="t10">Gestión docente universitaria</span>
+    <span class="topic" data-i18n="t11">IA para equipos de gestión docente</span>
   </div>
 </section>
 
@@ -290,6 +302,26 @@
       <div class="port-title" data-i18n="p3t">Diagnóstico de la brecha de preparación profesional en currículos STEM</div>
       <p class="port-desc" data-i18n="p3d">Instrumento de auditoría aplicado a 74 cursos en seis dimensiones de profesionalismo centrado en las personas.</p>
     </a>
+    <a class="port-card" href="cv.html#projects">
+      <div class="port-label" data-i18n="p4l">IA y comunidad · Avanza UC</div>
+      <div class="port-title" data-i18n="p4t">Alfabetización crítica en IA desde la co-creación transdisciplinar</div>
+      <p class="port-desc" data-i18n="p4d">Proyecto financiado que articula formación docente, comunidad y tecnología para co-crear alfabetización crítica en IA con escuelas en contextos desafiantes.</p>
+    </a>
+    <a class="port-card" href="cv.html#projects">
+      <div class="port-label" data-i18n="p5l">Gestión docente · Sector defensa</div>
+      <div class="port-title" data-i18n="p5t">SIIDD: sistema integrado de investigación, innovación y desarrollo docente</div>
+      <p class="port-desc" data-i18n="p5d">Diseño de un sistema institucional de mejora de la docencia junto a la Academia de Guerra Naval de la Armada de Chile (Programa Desafíos de la Educación UC).</p>
+    </a>
+    <a class="port-card" href="cv.html#projects">
+      <div class="port-label" data-i18n="p6l">Formación integral</div>
+      <div class="port-title" data-i18n="p6t">Pensamiento matemático y educación de la fe en la escuela</div>
+      <p class="port-desc" data-i18n="p6d">Investigación financiada sobre la integración de prueba matemática y formación integral, con publicación en revista de educación religiosa.</p>
+    </a>
+    <a class="port-card" href="cv.html#projects">
+      <div class="port-label" data-i18n="p7l">Formación de profesores · FONDEF</div>
+      <div class="port-title" data-i18n="p7t">Valoración de herramientas tecnológicas en la formación de profesores de matemáticas</div>
+      <p class="port-desc" data-i18n="p7d">Proyecto FONDEF (ANID) sobre los factores que inciden en la baja valoración de la tecnología por estudiantes de pedagogía en matemáticas.</p>
+    </a>
   </div>
 </section>
 
@@ -306,7 +338,16 @@
 <section class="wrap" id="contacto">
   <div class="sec-label" data-i18n="ct_label">Contacto</div>
   <h2 class="sec-title" data-i18n="ct_title">Conversemos</h2>
-  <p data-i18n="ct_p" style="max-width:38rem">¿Tu institución está pensando cómo abordar la IA? ¿Tu equipo docente necesita herramientas concretas? Escríbeme y coordinamos.</p>
+  <p data-i18n="ct_p" style="max-width:38rem">¿Tu institución está pensando cómo abordar la IA? ¿Tu equipo docente o de gestión necesita herramientas concretas? Escríbeme por el formulario o agenda directamente una asesoría.</p>
+  <form class="contact-form" action="https://formsubmit.co/car.rojasb@outlook.com" method="POST">
+    <input type="hidden" name="_subject" value="Contacto desde carlosrojasbruna.cl">
+    <input type="hidden" name="_next" value="https://www.carlosrojasbruna.cl/#contacto">
+    <input type="text" name="nombre" data-i18n-ph="f_name" placeholder="Tu nombre" required>
+    <input type="email" name="email" data-i18n-ph="f_email" placeholder="Tu correo" required>
+    <input type="text" name="institucion" data-i18n-ph="f_inst" placeholder="Institución (opcional)">
+    <textarea name="mensaje" rows="4" data-i18n-ph="f_msg" placeholder="¿En qué te puedo ayudar? (asesoría, charla, taller...)" required></textarea>
+    <button type="submit" class="btn btn-primary" data-i18n="f_send">Enviar mensaje</button>
+  </form>
   <div class="contact-grid">
     <a class="contact-item" href="mailto:car.rojasb@outlook.com">✉️ <span>car.rojasb@outlook.com</span></a>
     <a class="contact-item" href="https://www.linkedin.com/in/carlosrojasbruna" target="_blank" rel="noopener">💼 <span>linkedin/carlosrojasbruna</span></a>
@@ -325,21 +366,21 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 const I18N = {
   en: {
     nav_services: "Services", nav_about: "About", nav_portfolio: "Portfolio", nav_cv: "Academic CV", nav_contact: "Contact",
-    role2: "Professor, Pontificia Universidad Católica de Chile",
+    role2: "Consulting, talks & training in AI and education",
     tagline: "I help educational institutions and teaching teams integrate artificial intelligence and evidence-based pedagogical innovation — from institutional policy to the classroom.",
     cta1: "View services", cta2: "Book a conversation",
     st1: "Years of university teaching", st2: "Publications", st3: "Funded projects", st4: "International fellowships",
     svc_label: "Services", svc_title: "Consulting, talks and training",
     s1_name: "1:1 Expert consulting", s1_desc: "Video-call sessions to solve concrete challenges: AI in teaching and assessment, institutional AI policy, pedagogical innovation or curriculum redesign.",
     s1t1: "Single session", s1t1n: "1 hour, topic of your choice", s1t2: "3-session pack", s1t2n: "With follow-up between sessions", s1t3: "Monthly retainer", s1t3n: "4 sessions + async support", s1t3p: "USD 430<span style='color:var(--muted)'>/mo</span>",
-    s_book: "Book", s_quote: "Request", s_quote2: "Get a quote",
+    s_book: "Book a session", s_quote: "Request", s_quote2: "Get a quote",
     s2_name: "Talks & keynotes", s2_desc: "45–90 minute talks for educational communities: “AI in higher education”, “Critical AI literacy”, “Assessment in the age of AI”, among others.",
     s2t1: "Remote", s2t1n: "Video conference, Q&A included", s2t2: "In person · Santiago", s2t2n: "Metropolitan Region, Chile", s2t3: "Other regions / international", s2t3n: "Plus travel and lodging",
-    s3_name: "Workshops & training", s3_desc: "Hands-on programmes for teaching teams and institutions: AI-assisted grading, portfolios and reflective writing, competency-based curriculum redesign, educational data analytics.",
+    s3_name: "Workshops & training", s3_desc: "Hands-on programmes for teaching teams, <strong>teaching-management teams</strong> and institutions: AI adoption and governance co-constructed from practice, AI-assisted grading, portfolios and reflective writing, competency-based curriculum redesign, educational data analytics.",
     s3t1: "Half-day workshop", s3t1n: "Up to 25 people", s3t2: "Full-day workshop", s3t2n: "Up to 25 people", s3t3: "Institutional programme", s3t3n: "4+ sessions, tailored design", s3t3p: "from USD 2,200",
     price_note: "Reference prices in USD, taxes as applicable. Invoicing in CLP at the daily exchange rate for clients in Chile.",
     tp_label: "Areas of expertise", tp_title: "Topics I can help you with",
-    t1: "AI in teaching & assessment", t2: "AI governance & institutional policy", t3: "AI-assisted grading", t4: "Critical AI literacy", t5: "Portfolios & reflective writing", t6: "Competency-based curriculum redesign", t7: "Educational data analytics", t8: "Mathematics teacher education", t9: "University mathematics teaching", t10: "Academic teaching management",
+    t1: "AI in teaching & assessment", t2: "AI governance & institutional policy", t3: "AI-assisted grading", t4: "Critical AI literacy", t5: "Portfolios & reflective writing", t6: "Competency-based curriculum redesign", t7: "Educational data analytics", t8: "Mathematics teacher education", t9: "University mathematics teaching", t10: "Academic teaching management", t11: "AI for teaching-management teams",
     ab_label: "About", ab_title: "Research applied to practice",
     ab_p1: "I hold a PhD in Mathematics (Universidad de Chile) and serve as professor and Director of Teaching Management at the Faculty of Mathematics, Pontificia Universidad Católica de Chile. I research how to improve university teaching through evidence-based pedagogical innovation: digital technologies, metacognitive strategies and reflective learning.",
     ab_p2: "My recent work focuses on integrating artificial intelligence in education: AI-enhanced feedback systems, automated grading with human oversight, and the participatory co-construction of institutional AI policy. I have presented this work in Canada, Mexico, Germany, Japan, Greece and beyond.",
@@ -354,14 +395,22 @@ const I18N = {
     p1l: "AI · Automated grading", p1t: "AI-assisted grading of handwritten mathematics exams", p1d: "A 7-phase pipeline where the LLM proposes, SymPy verifies and the human decides. Piloted on the Linear Algebra final exam (UC).",
     p2l: "Curriculum analysis", p2t: "Do university math courses deliver what they promise?", p2d: "Gap analysis of 74 courses and 469 learning outcomes, coded against Bloom's taxonomy and the modelling cycle.",
     p3l: "STEM professionalism", p3t: "Diagnosing the professional readiness gap in STEM curricula", p3d: "Audit instrument applied to 74 courses across six dimensions of human-centred professionalism.",
+    p4l: "AI & community · Avanza UC", p4t: "Critical AI literacy through transdisciplinary co-creation", p4d: "Funded project connecting teacher education, community and technology to co-create critical AI literacy with schools in challenging contexts.",
+    p5l: "Teaching management · Defence sector", p5t: "SIIDD: an integrated system for research, innovation and teaching development", p5d: "Design of an institutional teaching-improvement system with the Naval War Academy of the Chilean Navy (UC Education Challenges Programme).",
+    p7l: "Teacher education · FONDEF", p7t: "Valuation of technological tools in mathematics teacher education", p7d: "FONDEF (ANID) project on the factors behind the low valuation of technology among pre-service mathematics teachers.",
+    p6l: "Holistic education", p6t: "Mathematical thinking and faith education at school", p6d: "Funded research on integrating mathematical proof and holistic formation, published in a religious education journal.",
     cvb_t: "Full academic CV", cvb_d: "Publications, research projects, conferences, international collaborations, teaching and more.", cvb_btn: "View academic CV →",
-    ct_label: "Contact", ct_title: "Let's talk", ct_p: "Is your institution figuring out how to approach AI? Does your teaching team need concrete tools? Write to me and let's coordinate."
+    ct_label: "Contact", ct_title: "Let's talk", ct_p: "Is your institution figuring out how to approach AI? Does your teaching or management team need concrete tools? Write to me using the form, or book a consulting session directly.",
+    f_send: "Send message",
+    _ph: { f_name: "Your name", f_email: "Your email", f_inst: "Institution (optional)", f_msg: "How can I help you? (consulting, talk, workshop...)" }
   },
   es: {} // filled from initial DOM
 };
 
 // capture Spanish originals
 document.querySelectorAll('[data-i18n]').forEach(el => { I18N.es[el.dataset.i18n] = el.innerHTML; });
+I18N.es._ph = {};
+document.querySelectorAll('[data-i18n-ph]').forEach(el => { I18N.es._ph[el.dataset.i18nPh] = el.placeholder; });
 
 let lang = 'es';
 function toggleLang() {
@@ -371,6 +420,10 @@ function toggleLang() {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const t = I18N[lang][el.dataset.i18n];
     if (t !== undefined) el.innerHTML = t;
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const t = (I18N[lang]._ph || {})[el.dataset.i18nPh];
+    if (t !== undefined) el.placeholder = t;
   });
 }
 </script>
