@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carlos Rojas Bruna · Asesorías, charlas y capacitaciones en IA y educación</title>
+  <meta name="description" content="PhD en Matemáticas · Profesor UC. Asesorías, charlas y capacitaciones en inteligencia artificial en educación, innovación docente y análisis curricular.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:       #ffffff;
+      --bg-card:  #f5f6f8;
+      --bg-card2: #eaecf0;
+      --border:   rgba(0,0,0,0.09);
+      --text:     #0f1923;
+      --muted:    #3d4d60;
+      --navy:     #1a3a6b;
+      --navy-l:   #1e4a8a;
+      --teal:     #0f5a48;
+      --r:        10px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { color: var(--navy); }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1080px; margin: 0 auto; padding: 0.7rem 1.4rem;
+      display: flex; align-items: center; gap: 1.2rem;
+    }
+    .nav-brand { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.1rem; color: var(--text); text-decoration: none; white-space: nowrap; }
+    .nav-brand span { color: var(--navy); }
+    .nav-links { display: flex; gap: 0.2rem; margin-left: auto; flex-wrap: wrap; }
+    .nav-link { font-size: 0.8rem; color: var(--muted); text-decoration: none; padding: 0.3rem 0.6rem; border-radius: 5px; transition: all .2s; }
+    .nav-link:hover { color: var(--navy); background: rgba(26,58,107,0.07); }
+    .lang-toggle {
+      font-family: 'DM Mono', monospace; font-size: 0.72rem; cursor: pointer;
+      border: 1px solid var(--border); background: transparent; color: var(--muted);
+      padding: 0.25rem 0.65rem; border-radius: 5px; transition: all .2s;
+    }
+    .lang-toggle:hover { border-color: var(--navy); color: var(--navy); }
+
+    /* ── LAYOUT ── */
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.4rem; }
+    section { padding: 4.2rem 0 1rem; }
+    .sec-label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--navy); font-weight: 600; margin-bottom: 0.5rem; font-family: 'DM Mono', monospace; }
+    .sec-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; line-height: 1.2; margin-bottom: 1.4rem; }
+
+    /* ── HERO ── */
+    .hero { padding: 5.5rem 0 2.5rem; }
+    .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
+    .hero-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 5.5vw, 3.6rem); font-weight: 300; line-height: 1.08; margin-bottom: 0.5rem; }
+    .hero-role { font-size: 0.84rem; font-family: 'DM Mono', monospace; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 1.4rem; }
+    .hero-role b { color: var(--navy); font-weight: 500; }
+    .hero-tag { font-size: 1.12rem; color: var(--text); max-width: 40rem; margin-bottom: 1.8rem; font-weight: 300; }
+    .hero-tag strong { font-weight: 600; }
+    .hero-ctas { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; text-decoration: none; border-radius: 7px; font-size: 0.88rem;
+      padding: 0.6rem 1.3rem; transition: all .2s; border: 1px solid var(--navy);
+    }
+    .btn-primary { background: var(--navy); color: #fff; }
+    .btn-primary:hover { background: var(--navy-l); }
+    .btn-ghost { color: var(--navy); background: transparent; }
+    .btn-ghost:hover { background: rgba(26,58,107,0.07); }
+    .avatar {
+      width: 150px; height: 150px; border-radius: 50%;
+      background: linear-gradient(135deg, #dce4f0, #eef2f8); border: 2px solid var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--navy); font-weight: 500;
+    }
+
+    /* ── STATS ── */
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: 0.9rem; margin-top: 2.6rem; }
+    .stat-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r); padding: 1rem 1.2rem; }
+    .stat-n { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: var(--navy); line-height: 1.1; }
+    .stat-l { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* ── SERVICES ── */
+    .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px,1fr)); gap: 1.1rem; }
+    .svc-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r);
+      padding: 1.5rem 1.5rem 1.2rem; display: flex; flex-direction: column; position: relative; overflow: hidden;
+    }
+    .svc-card::after { content:''; position: absolute; top:0; left:0; right:0; height: 3px; background: linear-gradient(90deg, var(--navy), var(--teal)); }
+    .svc-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .svc-name { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .svc-desc { font-size: 0.86rem; color: var(--muted); margin-bottom: 1rem; }
+    .tier { display: flex; justify-content: space-between; align-items: baseline; gap: 0.8rem; padding: 0.55rem 0; border-top: 1px dashed var(--border); }
+    .tier:last-of-type { margin-bottom: 1rem; }
+    .tier-name { font-size: 0.84rem; }
+    .tier-note { display: block; font-size: 0.72rem; color: var(--muted); }
+    .tier-price { font-family: 'DM Mono', monospace; font-size: 0.86rem; color: var(--navy); white-space: nowrap; font-weight: 500; }
+    .svc-cta { margin-top: auto; text-align: center; font-size: 0.84rem; }
+    .price-note { font-size: 0.75rem; color: var(--muted); margin-top: 1rem; }
+
+    /* ── TOPICS ── */
+    .topics { display: flex; flex-wrap: wrap; gap: 0.45rem; max-width: 52rem; }
+    .topic {
+      font-size: 0.78rem; font-family: 'DM Mono', monospace; color: var(--teal);
+      border: 1px solid rgba(15,90,72,.3); background: rgba(15,90,72,.05);
+      padding: 0.22rem 0.65rem; border-radius: 4px;
+    }
+
+    /* ── ABOUT ── */
+    .about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 2.2rem; align-items: start; }
+    .about-text p { margin-bottom: 1rem; font-size: 0.95rem; }
+    .about-side { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r); padding: 1.3rem 1.4rem; }
+    .about-side h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; margin-bottom: 0.6rem; }
+    .about-side li { font-size: 0.83rem; color: var(--muted); margin: 0.45rem 0 0.45rem 1.1rem; }
+
+    /* ── PORTFOLIO ── */
+    .port-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1.1rem; }
+    .port-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r);
+      padding: 1.3rem 1.4rem; text-decoration: none; color: var(--text); display: block; transition: border-color .2s, transform .2s;
+    }
+    .port-card:hover { border-color: var(--navy); transform: translateY(-2px); }
+    .port-label { font-size: 0.64rem; font-family: 'DM Mono', monospace; color: var(--navy); text-transform: uppercase; letter-spacing: 0.1em; }
+    .port-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; margin: 0.3rem 0 0.4rem; line-height: 1.3; }
+    .port-desc { font-size: 0.82rem; color: var(--muted); }
+
+    /* ── CV LINK ── */
+    .cv-band {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r);
+      padding: 1.6rem 1.8rem; display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap;
+    }
+    .cv-band-text { flex: 1; min-width: 240px; }
+    .cv-band h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; }
+    .cv-band p { font-size: 0.86rem; color: var(--muted); }
+
+    /* ── CONTACT ── */
+    .contact-grid { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.5rem; }
+    .contact-item {
+      display: flex; align-items: center; gap: 0.5rem; text-decoration: none;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 7px;
+      padding: 0.55rem 1rem; font-size: 0.85rem; color: var(--text); transition: border-color .2s;
+    }
+    .contact-item:hover { border-color: var(--navy); }
+    .contact-item span { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: var(--muted); }
+
+    footer { border-top: 1px solid var(--border); margin-top: 4rem; padding: 1.6rem 0 2.2rem; font-size: 0.76rem; color: var(--muted); }
+
+    @media (max-width: 760px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .avatar { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top">Carlos <span>Rojas Bruna</span></a>
+    <div class="nav-links">
+      <a class="nav-link" href="#servicios" data-i18n="nav_services">Servicios</a>
+      <a class="nav-link" href="#sobre-mi" data-i18n="nav_about">Sobre mí</a>
+      <a class="nav-link" href="#portafolio" data-i18n="nav_portfolio">Portafolio</a>
+      <a class="nav-link" href="cv.html" data-i18n="nav_cv">CV académico</a>
+      <a class="nav-link" href="#contacto" data-i18n="nav_contact">Contacto</a>
+    </div>
+    <button class="lang-toggle" id="langBtn" onclick="toggleLang()">EN</button>
+  </div>
+</nav>
+
+<header class="hero wrap" id="top">
+  <div class="hero-grid">
+    <div>
+      <h1 class="hero-name">Carlos Rojas Bruna</h1>
+      <div class="hero-role">PhD in Mathematics · <b data-i18n="role2">Profesor, Pontificia Universidad Católica de Chile</b></div>
+      <p class="hero-tag" data-i18n="tagline">Ayudo a instituciones educativas y equipos docentes a <strong>integrar inteligencia artificial e innovación pedagógica basada en evidencia</strong> — desde la política institucional hasta la sala de clases.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#servicios" data-i18n="cta1">Ver servicios</a>
+        <a class="btn btn-ghost" href="#contacto" data-i18n="cta2">Agenda una conversación</a>
+      </div>
+    </div>
+    <div class="avatar">CR</div>
+  </div>
+  <div class="stats">
+    <div class="stat-card"><div class="stat-n">15+</div><div class="stat-l" data-i18n="st1">Años de docencia universitaria</div></div>
+    <div class="stat-card"><div class="stat-n">13</div><div class="stat-l" data-i18n="st2">Publicaciones</div></div>
+    <div class="stat-card"><div class="stat-n">12+</div><div class="stat-l" data-i18n="st3">Proyectos financiados</div></div>
+    <div class="stat-card"><div class="stat-n">3</div><div class="stat-l" data-i18n="st4">Estadías internacionales</div></div>
+  </div>
+</header>
+
+<section class="wrap" id="servicios">
+  <div class="sec-label" data-i18n="svc_label">Servicios</div>
+  <h2 class="sec-title" data-i18n="svc_title">Asesorías, charlas y capacitaciones</h2>
+  <div class="svc-grid">
+
+    <div class="svc-card">
+      <div class="svc-icon">🎥</div>
+      <div class="svc-name" data-i18n="s1_name">Asesoría experta 1:1</div>
+      <p class="svc-desc" data-i18n="s1_desc">Sesiones por videollamada para resolver desafíos concretos: integración de IA en docencia y evaluación, políticas institucionales de IA, innovación pedagógica o rediseño curricular.</p>
+      <div class="tier"><div class="tier-name"><span data-i18n="s1t1">Sesión única</span><span class="tier-note" data-i18n="s1t1n">1 hora, tema a elección</span></div><div class="tier-price">USD 100</div></div>
+      <div class="tier"><div class="tier-name"><span data-i18n="s1t2">Pack 3 sesiones</span><span class="tier-note" data-i18n="s1t2n">Con seguimiento entre sesiones</span></div><div class="tier-price">USD 260</div></div>
+      <div class="tier"><div class="tier-name"><span data-i18n="s1t3">Acompañamiento mensual</span><span class="tier-note" data-i18n="s1t3n">4 sesiones + soporte asíncrono</span></div><div class="tier-price" data-i18n="s1t3p">USD 430<span style="color:var(--muted)">/mes</span></div></div>
+      <a class="btn btn-primary svc-cta" href="mailto:car.rojasb@outlook.com?subject=Asesor%C3%ADa%201%3A1" data-i18n="s_book">Reservar</a>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-icon">🎤</div>
+      <div class="svc-name" data-i18n="s2_name">Charlas y conferencias</div>
+      <p class="svc-desc" data-i18n="s2_desc">Charlas de 45–90 minutos para comunidades educativas: «IA en educación superior», «Alfabetización crítica en IA», «Evaluar en tiempos de IA», entre otras.</p>
+      <div class="tier"><div class="tier-name"><span data-i18n="s2t1">Remota</span><span class="tier-note" data-i18n="s2t1n">Videoconferencia, incluye Q&A</span></div><div class="tier-price">USD 380</div></div>
+      <div class="tier"><div class="tier-name"><span data-i18n="s2t2">Presencial · Santiago</span><span class="tier-note" data-i18n="s2t2n">Región Metropolitana</span></div><div class="tier-price">USD 540</div></div>
+      <div class="tier"><div class="tier-name"><span data-i18n="s2t3">Otras regiones / internacional</span><span class="tier-note" data-i18n="s2t3n">Más traslados y estadía</span></div><div class="tier-price">USD 540+</div></div>
+      <a class="btn btn-primary svc-cta" href="mailto:car.rojasb@outlook.com?subject=Charla%20o%20conferencia" data-i18n="s_quote">Solicitar</a>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-icon">🏛️</div>
+      <div class="svc-name" data-i18n="s3_name">Talleres y capacitaciones</div>
+      <p class="svc-desc" data-i18n="s3_desc">Programas prácticos para equipos docentes e instituciones: corrección asistida por IA, portafolios y escritura reflexiva, rediseño curricular por competencias, analítica de datos educativos.</p>
+      <div class="tier"><div class="tier-name"><span data-i18n="s3t1">Taller medio día</span><span class="tier-note" data-i18n="s3t1n">Hasta 25 personas</span></div><div class="tier-price">USD 700</div></div>
+      <div class="tier"><div class="tier-name"><span data-i18n="s3t2">Taller día completo</span><span class="tier-note" data-i18n="s3t2n">Hasta 25 personas</span></div><div class="tier-price">USD 1.200</div></div>
+      <div class="tier"><div class="tier-name"><span data-i18n="s3t3">Programa institucional</span><span class="tier-note" data-i18n="s3t3n">4+ sesiones, diseño a medida</span></div><div class="tier-price" data-i18n="s3t3p">desde USD 2.200</div></div>
+      <a class="btn btn-primary svc-cta" href="mailto:car.rojasb@outlook.com?subject=Taller%20o%20capacitaci%C3%B3n" data-i18n="s_quote2">Cotizar</a>
+    </div>
+  </div>
+  <p class="price-note" data-i18n="price_note">Valores referenciales en dólares (USD), exentos de impuestos según corresponda. Facturación en CLP al tipo de cambio del día para clientes en Chile.</p>
+</section>
+
+<section class="wrap">
+  <div class="sec-label" data-i18n="tp_label">Áreas de expertise</div>
+  <h2 class="sec-title" data-i18n="tp_title">Temas en los que puedo ayudarte</h2>
+  <div class="topics">
+    <span class="topic" data-i18n="t1">IA en docencia y evaluación</span>
+    <span class="topic" data-i18n="t2">Gobernanza y políticas institucionales de IA</span>
+    <span class="topic" data-i18n="t3">Corrección asistida por IA</span>
+    <span class="topic" data-i18n="t4">Alfabetización crítica en IA</span>
+    <span class="topic" data-i18n="t5">Portafolios y escritura reflexiva</span>
+    <span class="topic" data-i18n="t6">Rediseño curricular por competencias</span>
+    <span class="topic" data-i18n="t7">Analítica de datos educativos</span>
+    <span class="topic" data-i18n="t8">Formación de profesores de matemáticas</span>
+    <span class="topic" data-i18n="t9">Enseñanza universitaria de la matemática</span>
+    <span class="topic" data-i18n="t10">Gestión docente universitaria</span>
+  </div>
+</section>
+
+<section class="wrap" id="sobre-mi">
+  <div class="sec-label" data-i18n="ab_label">Sobre mí</div>
+  <h2 class="sec-title" data-i18n="ab_title">Investigación aplicada a la práctica</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p data-i18n="ab_p1">Soy Doctor en Matemáticas (Universidad de Chile), profesor y Director de Gestión Docente en la Facultad de Matemáticas de la Pontificia Universidad Católica de Chile. Investigo cómo mejorar la enseñanza universitaria mediante innovación pedagógica basada en evidencia: tecnologías digitales, estrategias metacognitivas y aprendizaje reflexivo.</p>
+      <p data-i18n="ab_p2">Mi trabajo reciente se centra en la integración de inteligencia artificial en la educación: sistemas de retroalimentación potenciados por IA, corrección automatizada de evaluaciones con supervisión humana, y la co-construcción participativa de políticas institucionales de IA. He presentado estos resultados en Canadá, México, Alemania, Japón, Grecia y otros países.</p>
+      <p data-i18n="ab_p3">Lo que ofrezco en asesorías y capacitaciones no es teoría: son métodos que he diseñado, aplicado y medido en cursos masivos reales y en la gestión de una facultad universitaria.</p>
+    </div>
+    <div class="about-side">
+      <h4 data-i18n="cred_title">Credenciales</h4>
+      <ul>
+        <li data-i18n="cr1">PhD en Matemáticas, Universidad de Chile</li>
+        <li data-i18n="cr2">Profesor y Director de Gestión Docente, Facultad de Matemáticas UC</li>
+        <li data-i18n="cr3">Miembro de la Mesa IA UC (política institucional de IA)</li>
+        <li data-i18n="cr4">Google Data Analytics Professional Certificate</li>
+        <li data-i18n="cr5">Estadías de investigación: U. de Nottingham, University College Dublin, U. de Kassel</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="portafolio">
+  <div class="sec-label" data-i18n="pf_label">Portafolio</div>
+  <h2 class="sec-title" data-i18n="pf_title">Proyectos destacados</h2>
+  <div class="port-grid">
+    <a class="port-card" href="https://carlosrojasbruna.github.io/grading/" target="_blank" rel="noopener">
+      <div class="port-label" data-i18n="p1l">IA · Corrección automatizada</div>
+      <div class="port-title" data-i18n="p1t">Corrección asistida por IA de pruebas manuscritas de matemáticas</div>
+      <p class="port-desc" data-i18n="p1d">Pipeline de 7 fases donde el LLM propone, SymPy verifica y el humano decide. Piloteado en el examen final de Álgebra Lineal (UC).</p>
+    </a>
+    <a class="port-card" href="https://carlosrojasbruna.github.io/curriculum-gap-analysis/" target="_blank" rel="noopener">
+      <div class="port-label" data-i18n="p2l">Análisis curricular</div>
+      <div class="port-title" data-i18n="p2t">¿Los cursos universitarios de matemáticas cumplen lo que prometen?</div>
+      <p class="port-desc" data-i18n="p2d">Análisis de brechas de 74 cursos y 469 resultados de aprendizaje, codificados con taxonomía de Bloom y ciclo de modelización.</p>
+    </a>
+    <a class="port-card" href="https://carlosrojasbruna.github.io/hcp-gap/" target="_blank" rel="noopener">
+      <div class="port-label" data-i18n="p3l">Profesionalismo STEM</div>
+      <div class="port-title" data-i18n="p3t">Diagnóstico de la brecha de preparación profesional en currículos STEM</div>
+      <p class="port-desc" data-i18n="p3d">Instrumento de auditoría aplicado a 74 cursos en seis dimensiones de profesionalismo centrado en las personas.</p>
+    </a>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="cv-band">
+    <div class="cv-band-text">
+      <h3 data-i18n="cvb_t">CV académico completo</h3>
+      <p data-i18n="cvb_d">Publicaciones, proyectos de investigación, conferencias, colaboraciones internacionales, docencia y más.</p>
+    </div>
+    <a class="btn btn-ghost" href="cv.html" data-i18n="cvb_btn">Ver CV académico →</a>
+  </div>
+</section>
+
+<section class="wrap" id="contacto">
+  <div class="sec-label" data-i18n="ct_label">Contacto</div>
+  <h2 class="sec-title" data-i18n="ct_title">Conversemos</h2>
+  <p data-i18n="ct_p" style="max-width:38rem">¿Tu institución está pensando cómo abordar la IA? ¿Tu equipo docente necesita herramientas concretas? Escríbeme y coordinamos.</p>
+  <div class="contact-grid">
+    <a class="contact-item" href="mailto:car.rojasb@outlook.com">✉️ <span>car.rojasb@outlook.com</span></a>
+    <a class="contact-item" href="https://www.linkedin.com/in/carlosrojasbruna" target="_blank" rel="noopener">💼 <span>linkedin/carlosrojasbruna</span></a>
+    <a class="contact-item" href="https://github.com/carlosrojasbruna" target="_blank" rel="noopener">💻 <span>github/carlosrojasbruna</span></a>
+    <a class="contact-item" href="https://orcid.org/0000-0003-0845-9986" target="_blank" rel="noopener">🔬 <span>ORCID 0000-0003-0845-9986</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© <span id="yr"></span> Carlos Rojas Bruna · www.carlosrojasbruna.cl</div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const I18N = {
+  en: {
+    nav_services: "Services", nav_about: "About", nav_portfolio: "Portfolio", nav_cv: "Academic CV", nav_contact: "Contact",
+    role2: "Professor, Pontificia Universidad Católica de Chile",
+    tagline: "I help educational institutions and teaching teams integrate artificial intelligence and evidence-based pedagogical innovation — from institutional policy to the classroom.",
+    cta1: "View services", cta2: "Book a conversation",
+    st1: "Years of university teaching", st2: "Publications", st3: "Funded projects", st4: "International fellowships",
+    svc_label: "Services", svc_title: "Consulting, talks and training",
+    s1_name: "1:1 Expert consulting", s1_desc: "Video-call sessions to solve concrete challenges: AI in teaching and assessment, institutional AI policy, pedagogical innovation or curriculum redesign.",
+    s1t1: "Single session", s1t1n: "1 hour, topic of your choice", s1t2: "3-session pack", s1t2n: "With follow-up between sessions", s1t3: "Monthly retainer", s1t3n: "4 sessions + async support", s1t3p: "USD 430<span style='color:var(--muted)'>/mo</span>",
+    s_book: "Book", s_quote: "Request", s_quote2: "Get a quote",
+    s2_name: "Talks & keynotes", s2_desc: "45–90 minute talks for educational communities: “AI in higher education”, “Critical AI literacy”, “Assessment in the age of AI”, among others.",
+    s2t1: "Remote", s2t1n: "Video conference, Q&A included", s2t2: "In person · Santiago", s2t2n: "Metropolitan Region, Chile", s2t3: "Other regions / international", s2t3n: "Plus travel and lodging",
+    s3_name: "Workshops & training", s3_desc: "Hands-on programmes for teaching teams and institutions: AI-assisted grading, portfolios and reflective writing, competency-based curriculum redesign, educational data analytics.",
+    s3t1: "Half-day workshop", s3t1n: "Up to 25 people", s3t2: "Full-day workshop", s3t2n: "Up to 25 people", s3t3: "Institutional programme", s3t3n: "4+ sessions, tailored design", s3t3p: "from USD 2,200",
+    price_note: "Reference prices in USD, taxes as applicable. Invoicing in CLP at the daily exchange rate for clients in Chile.",
+    tp_label: "Areas of expertise", tp_title: "Topics I can help you with",
+    t1: "AI in teaching & assessment", t2: "AI governance & institutional policy", t3: "AI-assisted grading", t4: "Critical AI literacy", t5: "Portfolios & reflective writing", t6: "Competency-based curriculum redesign", t7: "Educational data analytics", t8: "Mathematics teacher education", t9: "University mathematics teaching", t10: "Academic teaching management",
+    ab_label: "About", ab_title: "Research applied to practice",
+    ab_p1: "I hold a PhD in Mathematics (Universidad de Chile) and serve as professor and Director of Teaching Management at the Faculty of Mathematics, Pontificia Universidad Católica de Chile. I research how to improve university teaching through evidence-based pedagogical innovation: digital technologies, metacognitive strategies and reflective learning.",
+    ab_p2: "My recent work focuses on integrating artificial intelligence in education: AI-enhanced feedback systems, automated grading with human oversight, and the participatory co-construction of institutional AI policy. I have presented this work in Canada, Mexico, Germany, Japan, Greece and beyond.",
+    ab_p3: "What I offer in consulting and training is not theory: these are methods I have designed, applied and measured in real large-scale courses and in the management of a university faculty.",
+    cred_title: "Credentials",
+    cr1: "PhD in Mathematics, Universidad de Chile",
+    cr2: "Professor & Director of Teaching Management, Faculty of Mathematics UC",
+    cr3: "Member, UC AI Board (institutional AI policy)",
+    cr4: "Google Data Analytics Professional Certificate",
+    cr5: "Research fellowships: U. of Nottingham, University College Dublin, U. of Kassel",
+    pf_label: "Portfolio", pf_title: "Featured projects",
+    p1l: "AI · Automated grading", p1t: "AI-assisted grading of handwritten mathematics exams", p1d: "A 7-phase pipeline where the LLM proposes, SymPy verifies and the human decides. Piloted on the Linear Algebra final exam (UC).",
+    p2l: "Curriculum analysis", p2t: "Do university math courses deliver what they promise?", p2d: "Gap analysis of 74 courses and 469 learning outcomes, coded against Bloom's taxonomy and the modelling cycle.",
+    p3l: "STEM professionalism", p3t: "Diagnosing the professional readiness gap in STEM curricula", p3d: "Audit instrument applied to 74 courses across six dimensions of human-centred professionalism.",
+    cvb_t: "Full academic CV", cvb_d: "Publications, research projects, conferences, international collaborations, teaching and more.", cvb_btn: "View academic CV →",
+    ct_label: "Contact", ct_title: "Let's talk", ct_p: "Is your institution figuring out how to approach AI? Does your teaching team need concrete tools? Write to me and let's coordinate."
+  },
+  es: {} // filled from initial DOM
+};
+
+// capture Spanish originals
+document.querySelectorAll('[data-i18n]').forEach(el => { I18N.es[el.dataset.i18n] = el.innerHTML; });
+
+let lang = 'es';
+function toggleLang() {
+  lang = lang === 'es' ? 'en' : 'es';
+  document.documentElement.lang = lang;
+  document.getElementById('langBtn').textContent = lang === 'es' ? 'EN' : 'ES';
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const t = I18N[lang][el.dataset.i18n];
+    if (t !== undefined) el.innerHTML = t;
+  });
+}
+</script>
+</body>
+</html>
