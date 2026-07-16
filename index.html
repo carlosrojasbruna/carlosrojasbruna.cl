@@ -228,7 +228,7 @@
       <div class="tier"><div class="tier-name"><span data-i18n="s2t1">Remota</span><span class="tier-note" data-i18n="s2t1n">Videoconferencia, incluye Q&A</span></div><div class="tier-price">USD 380</div></div>
       <div class="tier"><div class="tier-name"><span data-i18n="s2t2">Presencial · Santiago</span><span class="tier-note" data-i18n="s2t2n">Región Metropolitana</span></div><div class="tier-price">USD 540</div></div>
       <div class="tier"><div class="tier-name"><span data-i18n="s2t3">Otras regiones / internacional</span><span class="tier-note" data-i18n="s2t3n">Más traslados y estadía</span></div><div class="tier-price">USD 540+</div></div>
-      <a class="btn btn-primary svc-cta" href="mailto:car.rojasb@outlook.com?subject=Charla%20o%20conferencia" data-i18n="s_quote">Solicitar</a>
+      <a class="btn btn-primary svc-cta" href="#contacto" data-i18n="s_quote">Solicitar</a>
     </div>
 
     <div class="svc-card">
@@ -238,7 +238,7 @@
       <div class="tier"><div class="tier-name"><span data-i18n="s3t1">Taller medio día</span><span class="tier-note" data-i18n="s3t1n">Hasta 25 personas</span></div><div class="tier-price">USD 700</div></div>
       <div class="tier"><div class="tier-name"><span data-i18n="s3t2">Taller día completo</span><span class="tier-note" data-i18n="s3t2n">Hasta 25 personas</span></div><div class="tier-price">USD 1.200</div></div>
       <div class="tier"><div class="tier-name"><span data-i18n="s3t3">Programa institucional</span><span class="tier-note" data-i18n="s3t3n">4+ sesiones, diseño a medida</span></div><div class="tier-price" data-i18n="s3t3p">desde USD 2.200</div></div>
-      <a class="btn btn-primary svc-cta" href="mailto:car.rojasb@outlook.com?subject=Taller%20o%20capacitaci%C3%B3n" data-i18n="s_quote2">Cotizar</a>
+      <a class="btn btn-primary svc-cta" href="#contacto" data-i18n="s_quote2">Cotizar</a>
     </div>
   </div>
   <p class="price-note" data-i18n="price_note">Valores referenciales en dólares (USD), exentos de impuestos según corresponda. Facturación en CLP al tipo de cambio del día para clientes en Chile.</p>
@@ -332,12 +332,10 @@
 </section>
 
 <section class="wrap" id="contacto">
-  <div class="sec-label" data-i18n="ct_label">Contacto</div>
   <h2 class="sec-title" data-i18n="ct_title">Conversemos</h2>
   <p data-i18n="ct_p" style="max-width:38rem">¿Tu institución está pensando cómo abordar la IA? ¿Tu equipo docente o de gestión necesita herramientas concretas? Escríbeme por el formulario o agenda directamente una asesoría.</p>
-  <form class="contact-form" action="https://formsubmit.co/car.rojasb@outlook.com" method="POST">
+  <form class="contact-form" action="https://formspree.io/f/mjgnygvz" method="POST">
     <input type="hidden" name="_subject" value="Contacto desde carlosrojasbruna.cl">
-    <input type="hidden" name="_next" value="https://www.carlosrojasbruna.cl/#contacto">
     <input type="text" name="nombre" data-i18n-ph="f_name" placeholder="Tu nombre" required>
     <input type="email" name="email" data-i18n-ph="f_email" placeholder="Tu correo" required>
     <input type="text" name="institucion" data-i18n-ph="f_inst" placeholder="Institución (opcional)">
@@ -345,7 +343,6 @@
     <button type="submit" class="btn btn-primary" data-i18n="f_send">Enviar mensaje</button>
   </form>
   <div class="contact-grid">
-    <a class="contact-item" href="mailto:car.rojasb@outlook.com">✉️ <span>car.rojasb@outlook.com</span></a>
     <a class="contact-item" href="https://www.linkedin.com/in/carlosrojasbruna" target="_blank" rel="noopener">💼 <span>linkedin/carlosrojasbruna</span></a>
     <a class="contact-item" href="https://github.com/carlosrojasbruna" target="_blank" rel="noopener">💻 <span>github/carlosrojasbruna</span></a>
     <a class="contact-item" href="https://orcid.org/0000-0003-0845-9986" target="_blank" rel="noopener">🔬 <span>ORCID 0000-0003-0845-9986</span></a>
@@ -395,7 +392,7 @@ const I18N = {
     p5l: "Teaching management · Defence sector", p5t: "SIIDD: an integrated system for research, innovation and teaching development", p5d: "Design of an institutional teaching-improvement system with the Naval War Academy of the Chilean Navy (UC Education Challenges Programme).",
     p6l: "Holistic education", p6t: "Mathematical thinking and faith education at school", p6d: "Funded research on integrating mathematical proof and holistic formation, published in a religious education journal.",
     cvb_t: "Full academic CV", cvb_d: "Publications, research projects, conferences, international collaborations, teaching and more.", cvb_btn: "View academic CV →",
-    ct_label: "Contact", ct_title: "Let's talk", ct_p: "Is your institution figuring out how to approach AI? Does your teaching or management team need concrete tools? Write to me using the form, or book a consulting session directly.",
+    ct_title: "Let's talk", ct_p: "Is your institution figuring out how to approach AI? Does your teaching or management team need concrete tools? Write to me using the form, or book a consulting session directly.",
     f_send: "Send message",
     _ph: { f_name: "Your name", f_email: "Your email", f_inst: "Institution (optional)", f_msg: "How can I help you? (consulting, talk, workshop...)" }
   },
