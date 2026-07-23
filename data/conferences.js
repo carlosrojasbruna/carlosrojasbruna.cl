@@ -5,7 +5,14 @@
 //  status: "upcoming" | "presented" | "presented" | "under-review"
 // ─────────────────────────────────────────────────────────────
 
-window.DATA_CONFERENCES = [
+window.DATA_CONFERENCES = [ {
+    year: "2026",
+    title: "Charla para apoderados sobre el uso de la inteligencia artificial (título por confirmar)",
+    event: "Colegio Monte Tabor y Nazaret",
+    location: "Santiago, Chile",
+    status: "upcoming",
+    note: "Talk for parents/guardians on the use of artificial intelligence. August 8, 2026."
+  },  
   {
     year: "2026",
     title: "Las nociones básicas de matemática y las prácticas pedagógicas esenciales",
