@@ -10,7 +10,7 @@ window.DATA_PROJECTS = [
   {
     year: "2026",
     title: "Los cajones que piensan: matemáticas para clasificar, comparar y decidir",
-    funder: "Travesías CTCI · PAR Explora Sur Oriente UC (ANID) · Implementación en Escuela Santos Rubio Morales, Pirque · $600.000",
+    funder: "Travesías CTCI · PAR Explora Sur Oriente UC (ANID) · Implementación en Escuela Santos Rubio Morales, Pirque ·",
     status: "awarded",
     role: "pi"
   },
